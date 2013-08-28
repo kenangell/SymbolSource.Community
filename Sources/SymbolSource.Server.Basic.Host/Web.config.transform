@@ -16,7 +16,14 @@
   </system.web>
 
   <system.webServer>
-    <modules runAllManagedModulesForAllRequests="true" />
+    <modules runAllManagedModulesForAllRequests="true">
+      <remove name="WebDAVModule" />
+      <!-- WebDavModule breaks the VERBS available for certain routes (i.e. /NuGet) -->
+    </modules>
+    <handlers>
+      <remove name="WebDAV" />
+      <!-- WebDav handler breaks the VERBS available for certain routes (i.e. /NuGet) -->
+    </handlers>
   </system.webServer>
 
   <system.serviceModel>
