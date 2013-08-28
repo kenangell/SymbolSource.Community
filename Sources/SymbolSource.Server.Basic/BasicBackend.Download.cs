@@ -10,7 +10,7 @@ namespace SymbolSource.Server.Basic
         public string GetSymbolFileLink(ref ImageFile imageFile)
         {
             string path = Path.Combine(GetPathFromImageFile(imageFile), imageFile.Name + ".pdb");
-            return configuration.RemotePath + '/' + path.Replace(Path.DirectorySeparatorChar, '/');
+            return configuration.InternalPath + '/' + path.Replace(Path.DirectorySeparatorChar, '/');
         }
 
         public string GetImageFileLink(ref ImageFile imageFile)

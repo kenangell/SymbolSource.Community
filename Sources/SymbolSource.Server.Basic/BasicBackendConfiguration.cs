@@ -19,7 +19,17 @@ namespace SymbolSource.Server.Basic
         {
             get
             {
-                return HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + HttpContext.Current.Request.ApplicationPath.TrimEnd('/') + "/Data";
+                return HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) +
+                       HttpContext.Current.Request.ApplicationPath.TrimEnd('/') + "/Data";
+            }
+        }
+
+        public string InternalPath
+        {
+            get
+            {
+                return HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) +
+                       HttpContext.Current.Request.ApplicationPath.TrimEnd('/') + "/Data";
             }
         }
     }
